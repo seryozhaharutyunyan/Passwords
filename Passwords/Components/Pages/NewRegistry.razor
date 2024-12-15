@@ -1,0 +1,20 @@
+﻿@page "/newRegistry"
+
+<h1 class="text-center">New registry</h1>
+<div class="text-center p-4">
+	<InputText type="text" class="form-control m-3" @bind-Value="siteName" placeholder="Site name"></InputText>
+	<div id="" class="text-danger m-3">@error.siteNameError</div>
+	<InputText type="text" class="form-control m-3" @bind-Value="emailOrPone" placeholder="Email or pone"></InputText>
+	<div id="" class="text-danger m-3">@error.emailOrPoneError</div>
+	<div id="" class="m-3 text-center">@generatedPassword</div>
+	@if (!flag)
+	{
+		<button class="btn bg-info mt-5 " @onclick="Generator">Generation</button>
+	}
+	
+	@if (flag)
+	{
+		<button class="btn bg-primary mt-5" @onclick="Save"><i class="bi bi-floppy-fill"></i>Save</button>
+	}
+</div>
+

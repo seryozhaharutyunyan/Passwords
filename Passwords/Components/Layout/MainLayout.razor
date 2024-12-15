@@ -1,0 +1,38 @@
+﻿@inherits LayoutComponentBase
+@inject NavigationManager nav;
+
+            @if(code == null)
+            {
+                <div class="m-5 p-3 text-center">
+                    <div class="text-center">Come up with a pin code of at least 6 characters</div>
+                    <div class="text-danger text-center">@err</div>
+                    <InputText type="password" class="form-control m-3" @bind-Value="pin" placeholder="Pin code"></InputText>
+                    <InputText type="password" class="form-control m-3" @bind-Value="rPin" placeholder="Repeat pin code"></InputText>
+                    <button class="btn bg-info mt-5" @onclick="Save">Save</button>
+                </div>
+
+            }
+            @if(!mainPage.flag & code !=null)
+            {
+                <div class="m-5 p-3 text-center">
+                    <div class="text-danger text-center">@err</div>
+                    <InputText @bind-Value="pin" type="password" class="form-control m-3" placeholder="Pin code"></InputText>
+                    <button class="btn bg-info mt-5" @onclick="Validate">0k</button>
+                </div>
+            }
+            @if(mainPage.flag & code != null)
+            {
+                <div class="page">
+                    <div class="sidebar">
+                        <NavMenu />
+                    </div>
+
+                    <main>
+                        <article class="content px-4">
+                            @Body
+                        </article>
+                    </main>
+                </div>
+            }
+     
+

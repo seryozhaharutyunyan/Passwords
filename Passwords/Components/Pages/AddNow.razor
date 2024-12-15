@@ -1,0 +1,17 @@
+﻿@page "/addNow"
+
+<h1 class="text-center">Add now</h1>
+
+<div class="m-4 text-center">
+	<InputText type="text" class="form-control m-3" @bind-Value="siteName" placeholder="Site name"></InputText>
+	<div id="" class="text-danger m-3">@error.siteNameError</div>
+	<InputText type="text" class="form-control m-3" @bind-Value="emailOrPone" placeholder="Email or pone"></InputText>
+	<div id="" class="text-danger m-3">@error.emailOrPoneError</div>
+	<InputText type="password" class="form-control m-3" @bind-Value="password" placeholder="Password"></InputText>
+	<div id="" class="text-danger m-3">@error.passwordError</div>
+	<button class="btn bg-primary text-center mt-5" @onclick="Save"><i class="bi bi-floppy-fill"></i>Save</button>
+
+</div>
+
+
+
